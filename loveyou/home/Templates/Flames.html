@@ -1,0 +1,41 @@
+{% extends 'fix.html' %}
+
+{% block content %}
+<div class="flamesbody">
+    <div class="main">
+        <h1>Love You</h1>
+        <h3>Enter your login credentials</h3>
+        <form action="">
+            <label for="Your Name">
+                  Your Name :
+              </label>
+            <input type="text"
+                   id="name1"
+                   name="name1"
+                   placeholder="Enter your Name" required>
+ 
+            <label for="Partner Name">
+                  Yout Partner Name :
+              </label>
+            <input type="text"
+                   id="name2"
+                   name="name2"
+                   placeholder="Enter Your Partner name" required>
+ 
+            <div class="wrap">
+                <button type="submit"
+                        onclick="solve()">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="main">
+
+    </div>
+</div>
+<div class="back">
+    <input class="backbutton" type="button" value="back">
+</div>
+{% endblock %}
+

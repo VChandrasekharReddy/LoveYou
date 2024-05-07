@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        .images{
+            display: flex;
+            justify-content: center;
+            padding: 100px;
+        }
+        .top{
+            width: 100%;
+            height: 100px;
+            border: 2px solid red;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-around;
+
+            
+        }
+        .logo{
+            align-content: center;
+        }
+        .mainn{
+            height: fit-content;
+            width: fit-content;
+            text-shadow: 2px salmon;
+            font-size: 40px;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-shadow: 0px 2px 3px pink, 2px 0px 5px #ea00ff;
+            font-weight: 600;
+                }
+        .about{
+            text-decoration: none;
+            padding: 20px;
+        }
+        .about:hover{
+            color: blueviolet;
+            font-size: 20px;
+            font-weight: 100;
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #ea00ff;
+        }
+        .footer{
+            width: 100%;
+            height: 400px;
+            background-color: rgb(255, 251, 254);
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+    
+        }
+        .ftc{
+            display:inline-flex;
+            justify-content: space-around;
+        }
+        .fc{
+            display:grid;
+        }
+        .fbc{
+ 
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+        .fc a{
+            text-align: center;
+            color: black;
+            padding: 3px 0px ;
+            text-decoration: none;
+        }
+        .fc a:hover{
+            color:rgb(55, 204, 50);
+            font-size: 20px;
+            text-shadow: 0px 2px 3px black;
+        }
+        .fbc{
+
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .login,.loginform,.registerform{
+            z-index: 1;
+
+            position: absolute;
+        
+            
+        }
+        .login{
+            height: 100%;
+            width: 100%;
+            background-color: #ffffff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position:fixed;
+
+
+        }
+        .loginform{
+            border-radius: 3%;
+            width:fit-content;
+            height: fit-content;
+            background-color: rgba(214, 122, 236, 0.302);
+        }
+        .main {
+            background-color: #ffffff98;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            transition: transform 0.2s;
+            width: 500px;
+            text-align: center;
+}
+ 
+h1 {
+    color: #9649b2;
+}
+ 
+label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+ 
+ 
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+ 
+button {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #9649b2;
+    width: 100%;
+    font-size: 16px;
+}
+ 
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.linksdiv{
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff98;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    text-align: center;
+    padding: 10px;
+    margin: 100px;
+}
+.imagess{
+    width: 100%;
+    height: 70%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+
+}
+a{
+    text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+    {% if show_popup %}
+    <div class="login" id="one"><!----------------login z index form-->
+        <div class="loginform" id="two"><!----------------login form-->
+            <div class="loginlogo">
+            </div action = 'POST'>
+
+            <div class="loginf">
+                <div class="main">
+                    <button onclick="remover()">remove</button>
+                    <script>
+                        function remover(){
+                            document.getElementById('one').style.display='none'
+                            document.getElementById('two').style.display='none'
+                        }
+                    </script>
+                    <h1>Love You</h1>
+                    <h3>Enter your login credentials</h3>
+                    <form action="">
+                        <label for="first">
+                              Username:
+                          </label>
+                        <input type="text"
+                               id="first"
+                               name="first"
+                               placeholder="Enter your Username" required>
+             
+                        <label for="password">
+                              Password:
+                          </label>
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Enter your Password" required>
+             
+                        <div class="wrap">
+                            <button type="submit"
+                                    onclick="solve()">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                    <p>Not registered? 
+                          <a href="#"
+                           style="text-decoration: none;">
+                            Create an account
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+    </div>
+    <div class = 'top'> 
+        <div class = 'logo'>
+            <img src="{% static 'logo.jpg' %}" alt="{{name}}" width="50px" height="50px">
+        </div>
+        <div class="mainn">Fucus</div>
+        <div class="menu">
+            <a href="{% url 'about'%}" class="about">about</a>
+            <a href="./about.html" class="about">about</a>
+            <a href="./about.html" class="about">about</a>
+            <a href="./about.html" class="about">about</a>
+        </div>
+    </div>
+
+
+
+    <!--this the body that the main and the content-->
+    <div class = 'body'>
+        <div class="images">
+            <img src="{%static 'img1.webp' %}" alt="" height="500px" width="70%">
+        </div>
+        <div class="content">
+            <div class="linksdiv">
+                <div class="imagess"><img src="{% static 'flames.jpg' %}" alt=""  width="100%"></div>
+                <a href="{%url 'flames' %}"><h1>Flames</h1></a>
+            </div>
+            <div class="content">
+            <div class="linksdiv">
+                <div class="imagess"><img src="{% static 'wishes.jpg' %}" alt=""  width="100%"></div>
+                <a href="{%url 'wishes' %}"><h1>Wishes and Gifts</h1></a>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <!--footer at the botton of the contebt-->
+    <div class = 'footer'>
+        <!----------------- ----- footer top content like links-->
+        <div class="ftc">
+            <div class="fc"><!-------------1 div-->
+                <a href="#">about the comany</a>
+                <a href="#">contents</a>
+                <a href="#">finding the opertunities </a>
+                <a href="#">technogies used</a>
+                <a href="#">chandrasekhar </a>
+                <a href="#">my blog</a>
+                <a href="#">hello</a>
+
+            </div>
+            <div class="fc"><!-------------2 div-->
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+            </div>
+            <div class="fc"><!-------------3 div-->
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+                <a href="#">hello</a>
+            </div>
+        </div>
+
+        <!---------------------------------------------------------this are the logis of our social media------------------------------------->
+        <div class="fbc">
+            <a href="{% url 'flames' %}" class="insta">insta</a>
+            <a href="" class="youtube">youtube</a>
+            <a href="" class="twitter">twitter</a>
+            <a href="" class="fucus">fucus</a>
+            <a href="" class="linkedin">linkedin</a>
+        </div>
+    </div>
+</body>
+</html>
